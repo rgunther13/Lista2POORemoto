@@ -1,6 +1,8 @@
 public class VendedorTeste {
 
     public static void imprimeTabela(Vendedor vendedores[]){
+
+        double soma1 = 0 , soma2 = 0, soma3 = 0;
         
         for (int i = 0; i < vendedores.length; i += 3 ){
             System.out.printf("%s\t %.1f\t %.1f\t %.1f\t %.1f\t \n", vendedores[i].getNome(),
@@ -8,11 +10,19 @@ public class VendedorTeste {
               vendedores[i+1].getTotal(),
                vendedores[i+2].getTotal(),
                (vendedores[i].getTotal() + vendedores[i+1].getTotal() + vendedores[i+2].getTotal()));
-                }
+        }
+
+        for (int i = 0; i < vendedores.length; i++ ){
+            if (vendedores[i].getNumero() == 1)
+                soma1 += vendedores[i].getTotal();
+                else if (vendedores[i].getNumero() == 2)
+                    soma2 += vendedores[i].getTotal();
+                    else
+                        soma3 += vendedores[i].getTotal();
+        }
+
+        System.out.printf("TOTAL\t %.1f \t %.1f \t %.1f\n", soma1, soma2, soma3);
         
-        
-        //System.out.printf("Nome: %s Numero do Produto: %d Total: %.2f\n ", vendedores.getNome(),
-        //    vendedores.getNumero(), vendedores.getTotal());
     }
     public static void main(String[] args) {
         
