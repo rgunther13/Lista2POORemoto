@@ -1,5 +1,9 @@
 public class VendedorTeste {
 
+    public static void imprimeTabela(Vendedor vendedores){
+        System.out.printf("Nome: %s Numero do Produto: %d Total: %.2f\n ", vendedores.getNome(),
+            vendedores.getNumero(), vendedores.getTotal());
+    }
     public static void main(String[] args) {
         
         Vendedor vendedores []  = new Vendedor [12];
@@ -16,7 +20,8 @@ public class VendedorTeste {
         vendedores [10] = new Vendedor("Eduarda", 2, 25.0);
         vendedores [11] = new Vendedor("Eduarda", 3, 300.0);
 
-        
+        for(int i = 0; i < vendedores.length; i++)
+            imprimeTabela(vendedores[i]); 
 
         
         
