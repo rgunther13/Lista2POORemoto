@@ -1,5 +1,34 @@
 public class VendedorTeste {
 
+    public static double vetorparamatriz(Vendedor vendedores[]) {
+
+        double matriz[][] = new double[4][3];
+        int i = 0, k =0 ;
+        for (int j = 0; j < vendedores.length; j++){
+            if (j !=0 & j%3 == 0){
+                i++;
+                k = 0;
+            }
+            //System.out.printf(" %d %d \n", i,  j);
+            matriz[i][k] = vendedores[j].getTotal();
+            k++;
+        }
+        return matriz;
+    }
+
+    public static void mostramatriz(int matriz[][]) {
+
+        for (int i =0; i < matriz.length; i++){
+            for (int j = 0; j < matriz[0].length; j++){
+                System.out.printf("[ %f ]\t", matriz[i][j]);
+            }
+            System.out.println("\n");
+        }
+        
+    }
+        
+    
+
     public static void imprimeTabela(Vendedor vendedores[]){
 
         double soma1 = 0 , soma2 = 0, soma3 = 0;
@@ -40,8 +69,9 @@ public class VendedorTeste {
         vendedores [10] = new Vendedor("Eduarda", 2, 25.0);
         vendedores [11] = new Vendedor("Eduarda", 3, 300.0);
 
-        imprimeTabela(vendedores); 
-
+        imprimeTabela(vendedores);
+        vetorparamatriz(vendedores);
+        mostramatriz(matriz);
         
         
     }
