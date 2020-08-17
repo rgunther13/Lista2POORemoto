@@ -10,8 +10,6 @@ public class Vendedor {
         this.valortotal = valortotal;
     }
     
-  
-
     //Métodos GET
     public String getNome(){
         return nome;
